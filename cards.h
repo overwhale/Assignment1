@@ -50,10 +50,14 @@ class Hand {
       // A vector of Cards
       Hand();
 
-      // You decide what functions you'll need...
+      // Get another card from the pile.
+      void add_card();
+
+      // Convert the cards' rank to the value.
+      int get_value() const;
 
    private:
-      // You decide what fields you'll need...
+      int value;
 };
 
 
@@ -64,6 +68,7 @@ class Player {
       Player(int m);
 
       // You decide what functions you'll need...
+      void add_fund(int some_money);
 
    private:
       int money;

@@ -123,11 +123,33 @@ bool Card::operator < (Card card2) const {
    Hand class
    ************************************************* */
 // Implemente the member functions of the Hand class here.
+Hand::Hand(){
+	vector<Cards> hand;
+}
 
+bool Hand::add_card(Card c){
+    if(value < 7.5){
+        hand.push_back(c);
+	c.rank >= 10 ? value += 0.5 : value += c.rank; 
+	return true;
+    }
+    return false;
+    
+}
+
+int Hand::get_value const(){
+    return value;
+}
 
 
 /* *************************************************
    Player class
    ************************************************* */
 // Implemente the member functions of the Player class here.
+Player::Player(int m){
+    money = m;
+}
+void Player::add_funds(int some_money){
+    money += some_money;
+}
 
