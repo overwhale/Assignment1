@@ -108,7 +108,7 @@ string Card::get_spanish_rank() const {
 // Accessor: returns a string with the suit of the card in English 
 // This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const { 
-     String suitName; 
+     string suitName; 
      switch (suit) {
       case OROS: 
          suitName = "coins"; 
@@ -186,20 +186,22 @@ bool Card::operator < (Card card2) const {
    ************************************************* */
 // Implemente the member functions of the Hand class here.
 Hand::Hand(){
-	vector<Cards> hand;
+	hand;
+	value = 0;
 }
 
 bool Hand::add_card(Card c){
     if(value < 7.5){
         hand.push_back(c);
-	c.rank >= 10 ? value += 0.5 : value += c.rank; 
+		double rank = c.get_rank();
+	    rank >= 10 ? value += 0.5 : value += rank; 
 	return true;
     }
     return false;
     
 }
 
-int Hand::get_value const(){
+int Hand::get_value() const{
     return value;
 }
 
@@ -211,7 +213,7 @@ int Hand::get_value const(){
 Player::Player(int m){
     money = m;
 }
-void Player::add_funds(int some_money){
-    money += some_money;
+bool Player::isEmpty(){
+	return money <= 0;
 }
 

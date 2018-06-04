@@ -58,13 +58,15 @@ class Hand {
       Hand();
 
       // Get another card from the pile.
-      void add_card();
+      bool add_card(Card c);
+
 
       // Convert the cards' rank to the value.
       int get_value() const;
 
    private:
-      int value;
+      double value;
+	  vector<Card> hand;
 };
 
 
@@ -75,7 +77,7 @@ class Player {
       Player(int m);
 
       // You decide what functions you'll need...
-      void add_fund(int some_money);
+      bool isEmpty();
 
    private:
       int money;
