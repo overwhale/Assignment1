@@ -7,12 +7,7 @@
 #include "cards.h"
 using namespace std;
 
-void printCard(Card c1) {
-	cout << "        " + c1.get_spanish_rank() + " de "
-		+ c1.get_spanish_suit() + "        ("
-		+ c1.get_english_rank() + " of "
-		+ c1.get_english_suit() + " )." << endl;
-}
+
 
 int main(){
     int bet;
@@ -24,10 +19,23 @@ int main(){
 		cout << "you have $100. enter bet: ";
 		cin>> bet;
     	cout << "Your cards:"<< endl;
-		Card c1;
-		h1.add_card(c1);
-		printCard(c1);
+		h1.add_card();
+		cout << "Your total is: " + h1.get_value() << 
+			". Do you want another card (y/n)? ";
+		char ans;
+		cin >> ans;
+		h2.add_card();
+		
+		cout << "The dealer's total is " + h2.get_value();
+
+		if (ans == 'y') {
+			Card c2;
+			h2.add_card(c2);
+			cout << "New Card£º " << endl;
+			printCard(c2);
+		}
 		break;
     }
+	return 0;
 	system("pause");
 }

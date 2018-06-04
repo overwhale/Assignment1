@@ -179,6 +179,13 @@ bool Card::operator < (Card card2) const {
    return rank < card2.rank;
 }
 
+void Card::print_card(Card c) const{
+	cout << "        " + c.get_spanish_rank() + " de "
+		+ c.get_spanish_suit() + "        ("
+		+ c.get_english_rank() + " of "
+		+ c.get_english_suit() + " )." << endl;
+}
+
 
 
 /* *************************************************
@@ -190,15 +197,17 @@ Hand::Hand(){
 	value = 0;
 }
 
-bool Hand::add_card(Card c){
-    if(value < 7.5){
-        hand.push_back(c);
-		double rank = c.get_rank();
-	    rank >= 10 ? value += 0.5 : value += rank; 
-	return true;
-    }
-    return false;
-    
+void Hand::add_card(){
+	Card c;
+    hand.push_back(c);
+	double rank = c.get_rank();
+	rank >= 10 ? value += 0.5 : value += rank; 
+}
+
+
+void Hand::show_all() const{
+	for (auto i = hand.begin(); i != hand.end(); i++)
+		*i.print_card();
 }
 
 int Hand::get_value() const{
