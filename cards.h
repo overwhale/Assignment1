@@ -59,18 +59,20 @@ class Hand {
       Hand();
 
       // Get another card from the pile.
-      void add_card();
+      void add_card(Card c);
 	  //void get_card();
 	  void show_all() const;
       // Convert the cards' rank to the value.
       double get_value() const;
 
 	  void print_card(Card c1) const;
+	  
+	  void reset();
 
    private:
       double value;
-	  int numCards;
-	 std::vector<Card> hand;
+	//  int numCards;
+	  vector<Card> hand;
 };
 
 

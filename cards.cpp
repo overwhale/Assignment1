@@ -191,12 +191,12 @@ Hand::Hand(){
 	value = 0;
 }
 
-void Hand::add_card(){
-	Card c;
+void Hand::add_card(Card c){
+	//Card c;
     hand.push_back(c);
 	double rank = c.get_rank();
 	rank >= 10 ? value += 0.5 : value += rank; 
-	numCards++;
+	//numCards++;
 	print_card(c);
 }
 
@@ -220,6 +220,10 @@ void Hand::print_card(Card c) const {
 		+ c.get_spanish_suit() + "        ("
 		+ c.get_english_rank() + " of "
 		+ c.get_english_suit() + " )." << endl;
+}
+
+void Hand::reset(){
+	hand.clear();
 }
 
 /* *************************************************

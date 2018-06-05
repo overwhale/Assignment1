@@ -20,7 +20,7 @@ int main(){
 		cout << "you have $" << p1.get_money() << ". enter bet: ";
 		cin>> bet;
     	cout << "Your cards:"<< endl;
-		h1.add_card();
+		h1.add_card(Card());
 		cout << "Your total is: " << setprecision(2) << h1.get_value() <<
 			". Do you want another card (y/n)? ";
 		char ans;
@@ -31,7 +31,7 @@ int main(){
 		while (ans == 'y') {
 		//	h2.add_card();
 			cout << "New Card£º " << endl;
-			h1.add_card();
+			h1.add_card(Card());
 			cout << "Your cards:" << endl;
 			h1.show_all();
 			cout << "Your total is: " << setprecision(2) << h1.get_value() <<"." << endl;
@@ -39,19 +39,19 @@ int main(){
 				cout << " Do you want another card (y/n)? ";
 				cin >> ans;
 			}else {
-				ans == 'n';
+				ans = 'n';
 			}
 		}
 		// Dealer gets first card.
 		cout << "Dealer's cards:"<< endl;
-		h2.add_card();
+		h2.add_card(Card());
 		cout << "The dealer's total is " << setprecision(2) << 
 				h2.get_value()<<"."<<endl;
 
 		// check if dealer needs to get card
 		while (h2.get_value() < 5.5) {
 			cout << "New Card£º " << endl;
-			h2.add_card();
+			h2.add_card(Card());
 			cout << "Dealer's cards:" << endl;
 			h2.show_all();
 			cout << "The dealer's total is " << setprecision(2) << 
@@ -83,6 +83,8 @@ int main(){
 			dealer.lose(bet);
 		}
 		// Reset hands
+		h1.reset();
+		h2.reset();
 		cout << "=============================================" << endl;
     }
 	system("pause");
