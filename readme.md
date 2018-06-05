@@ -8,4 +8,4 @@
 
   The game keeps going on until the player lose all the money or the dealer lose 900. After each game, players get or lose the bet accordingly. And the hands of players get reset as desired.
   
-  For implementation, I added print_card and show_all, these two member function addtionally to help organizing the code so that the main function looks neat.
+  For implementation, I added print_card and show_all, these two member function addtionally to help organizing the code so that the main function looks neat. And reset function is added to reset the hand after each game. As well as, for Players, I add win and lose functions to adjust their gaining after each game.

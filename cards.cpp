@@ -210,11 +210,6 @@ double Hand::get_value() const{
     return value;
 }
 
-//int Hand::get_Card(int index) const{
-//	return hand.
-//}
-
-
 void Hand::print_card(Card c) const {
 	cout << "        " + c.get_spanish_rank() + " de "
 		+ c.get_spanish_suit() + "        ("
