@@ -43,7 +43,7 @@ int main(){
 			}
 		}
 		// Dealer gets first card.
-		cout << "Dealer's cards:";
+		cout << "Dealer's cards:"<< endl;
 		h2.add_card();
 		cout << "The dealer's total is " << setprecision(2) << 
 				h2.get_value()<<"."<<endl;
@@ -57,7 +57,7 @@ int main(){
 			cout << "The dealer's total is " << setprecision(2) << 
 				h2.get_value() <<"." <<endl;
 		}
-
+		// Result comparison
 		cout << endl;
 		if (h1.get_value()> 7.5 ) {
 			cout << "You lose:" << bet << "!" << endl;
@@ -82,7 +82,7 @@ int main(){
 			p1.win(bet);
 			dealer.lose(bet);
 		}
-		
+		// Reset hands
 		cout << "=============================================" << endl;
     }
 	system("pause");
