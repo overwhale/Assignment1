@@ -13,11 +13,11 @@ using namespace std;
 int main(){
     int bet;
     Player p1(100);
-    Player dealer(400);
+    Player dealer(900);
     while(!p1.isEmpty() && !dealer.isEmpty()){
 		Hand h1;
 		Hand h2;
-		cout << "you have $100. enter bet: ";
+		cout << "you have $" << p1.get_money() << ". enter bet: ";
 		cin>> bet;
     	cout << "Your cards:"<< endl;
 		h1.add_card();
@@ -58,7 +58,32 @@ int main(){
 				h2.get_value() <<"." <<endl;
 		}
 
-		break;
+		cout << endl;
+		if (h1.get_value()> 7.5 ) {
+			cout << "You lose:" << bet << "!" << endl;
+			p1.lose(bet);
+			dealer.win(bet);
+		}
+		else if (h2.get_value() > 7.5) {
+			cout << "You win:" << bet << "!" << endl;
+			p1.win(bet);
+			dealer.lose(bet);
+		}
+		else if (h1.get_value() < h2.get_value()) {
+			cout << "You lose:" << bet << "!" << endl;
+			p1.lose(bet);
+			dealer.win(bet);
+		}
+		else if (h1.get_value() == h2.get_value()) {
+			cout << "Nobody wins!" << endl;
+		}
+		else {
+			cout << "You win:" << bet << "!" << endl;
+			p1.win(bet);
+			dealer.lose(bet);
+		}
+		
+		cout << "=============================================" << endl;
     }
 	system("pause");
 }

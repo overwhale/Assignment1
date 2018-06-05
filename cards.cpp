@@ -229,7 +229,19 @@ void Hand::print_card(Card c) const {
 Player::Player(int m){
     money = m;
 }
+
 bool Player::isEmpty(){
 	return money <= 0;
 }
 
+void Player::win(int a) {
+	money += a;
+}
+
+void Player::lose(int a) {
+	money -= a;
+}
+
+int Player::get_money() const{
+	return money;
+}

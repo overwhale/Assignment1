@@ -83,6 +83,10 @@ class Player {
       // You decide what functions you'll need...
       bool isEmpty();
 
+	  void win(int a);
+	  void lose(int a);
+
+	  int get_money() const;
    private:
       int money;
       // You decide what extra fields (if any) you'll need...
