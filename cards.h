@@ -46,7 +46,6 @@ class Card {
       // Useful if you want to sort the cards.
       bool operator < (Card card2) const;
 
-	  void print_card(Card c1) const;
 
 private:
       suit_t suit;
@@ -61,12 +60,16 @@ class Hand {
 
       // Get another card from the pile.
       void add_card();
+	  //void get_card();
 	  void show_all() const;
       // Convert the cards' rank to the value.
-      int get_value() const;
+      double get_value() const;
+
+	  void print_card(Card c1) const;
 
    private:
       double value;
+	  int numCards;
 	 std::vector<Card> hand;
 };
 
