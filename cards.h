@@ -60,19 +60,23 @@ class Hand {
 
       // Get another card from the pile.
       void add_card(Card c);
-	  //void get_card();
+
+	  // Show all the cards in the hand.
 	  void show_all() const;
+
       // Convert the cards' rank to the value.
       double get_value() const;
 
-	  void print_card(Card c1) const;
-	  
+	  // Reset the hand.
 	  void reset();
 
    private:
       double value;
 	//  int numCards;
 	  vector<Card> hand;
+
+	  // A helper function to print out a card.
+	  void print_card(Card c1) const;
 };
 
 
@@ -85,7 +89,10 @@ class Player {
       // You decide what functions you'll need...
       bool isEmpty();
 
+	  // Add the bet when player wins.
 	  void win(int a);
+
+	  // Deduct the bet when player loses.
 	  void lose(int a);
 
 	  int get_money() const;
