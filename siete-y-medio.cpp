@@ -92,5 +92,6 @@ int main(){
 		std::cout << "=============================================" << endl;
 		num++;
     }
-	system("pause");
+//	system("pause");
+	return 0;
 }
