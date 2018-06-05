@@ -14,6 +14,7 @@ int main(){
     int bet;
     Player p1(100);
     Player dealer(900);
+	int num = 1;
     while(!p1.isEmpty() && !dealer.isEmpty()){
 		Hand h1;
 		Hand h2;
@@ -82,10 +83,32 @@ int main(){
 			p1.win(bet);
 			dealer.lose(bet);
 		}
+
+		ofstream file;
+		file.open("Gamelog.txt");
+		if (file.is_open()) {
+			file << endl;
+			file << "----------------------------------------------" << endl;
+			file << "Game number: " << num << "        " << "Money left: $" <<
+				p1.get_money()<<endl;
+			file << "Bet: " << bet<<endl;
+			file << "Your cards:" << endl;
+			h1.show_all();
+			file << "Your total is: " << setprecision(2) << h1.get_value() << "." << endl<<endl;
+			file << "Dealer's cards:" << endl;
+			h2.show_all();
+			file << "The dealer's total is " << setprecision(2) <<
+				h2.get_value() << "." << endl<<endl;
+
+			file << "----------------------------------------------" << endl;
+		}
+		file.close();
+
 		// Reset hands
 		h1.reset();
 		h2.reset();
 		cout << "=============================================" << endl;
+		num++;
     }
 	system("pause");
 }
