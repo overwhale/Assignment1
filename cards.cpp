@@ -191,12 +191,12 @@ Hand::Hand(){
 	value = 0;
 }
 
-void Hand::add_card(){
-	Card c;
+void Hand::add_card(Card c){
+	//Card c;
     hand.push_back(c);
 	double rank = c.get_rank();
 	rank >= 10 ? value += 0.5 : value += rank; 
-	numCards++;
+	//numCards++;
 	print_card(c);
 }
 
@@ -222,6 +222,10 @@ void Hand::print_card(Card c) const {
 		+ c.get_english_suit() + " )." << endl;
 }
 
+void Hand::reset(){
+	hand.clear();
+}
+
 /* *************************************************
    Player class
    ************************************************* */
@@ -229,7 +233,19 @@ void Hand::print_card(Card c) const {
 Player::Player(int m){
     money = m;
 }
+
 bool Player::isEmpty(){
 	return money <= 0;
 }
 
+void Player::win(int a) {
+	money += a;
+}
+
+void Player::lose(int a) {
+	money -= a;
+}
+
+int Player::get_money() const{
+	return money;
+}
