@@ -85,25 +85,6 @@ int main(){
 			dealer.lose(bet);
 		}
 
-		//ofstream file;
-		//file.open("Gamelog.txt", std::ofstream::out | std::ofstream::app);
-		//if (file.is_open()) {
-		//	file << endl;
-		//	file << "----------------------------------------------" << endl;
-		//	file << "Game number: " << num << "        " << "Money left: $" <<
-		//		p1.get_money()<<endl;
-		//	file << "Bet: " << bet<<endl;
-		//	file << "Your cards:" << endl;
-		//	h1.show_all();
-		//	file << "Your total is: " << setprecision(2) << h1.get_value() << "." << endl<<endl;
-		//	file << "Dealer's cards:" << endl;
-		//	h2.show_all();
-		//	file << "The dealer's total is " << setprecision(2) <<
-		//		h2.get_value() << "." << endl<<endl;
-
-		//	file << "----------------------------------------------" << endl;
-		//}
-		//file.close();
 
 		// Reset hands
 		h1.reset();
